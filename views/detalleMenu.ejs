@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pimienta & sal</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <!-- Navbar (sit on top) -->
+   
+    <% include('./partials/nav-bar') %> 
+
+    <!-- Header -->
+ <% include('./partials/header') %> 
+
+    <!-- Page content -->
+    <div class="ps-content">
+
+      <!-- Menu Section -->
+      <div class="ps-row ps-padding-64" id="menu">
+        <div class="ps-col l6 ps-padding-large">
+          <h1 class="ps-center"><%= product.name %> </h1>
+          <br />
+          <h4><%= product.description ? product.description : 'Plato Tipico'%> </h4>
+          <p class="ps-text-grey">
+            U$S <%= product.price %> 
+          </p>
+        </div>
+
+        <div class="ps-col l6 ps-padding-large ps-img-menu">
+          <img
+            src="/images/<%= product.image ? product.image : 'default-image.png'%>"
+            class="ps-round ps-image ps-opacity-min"
+            alt="Menu"
+          />
+        </div>
+      </div>
+
+      <!-- Footer -->
+    <% include('./partials/footer') %> 
+    </div>
+  </body>
+</html>
